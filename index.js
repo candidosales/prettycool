@@ -6,9 +6,10 @@ const fs = require('fs');
 const R = require('ramda');
 
 const mainPath = path.dirname(fs.realpathSync(__filename));
-const soundPath = path.join(mainPath, './daledale');
+const soundPath = path.join(mainPath, './pretty-cool');
+const imagePath = path.join(mainPath, './ascii-art.txt')
 
-const daledale = function (){
+const prettycool = function (){
     const linuxcmd = R.join('', ['paplay ', soundPath, '.ogg']);
     const windowscmd = R.join('', [path.join(mainPath, './forWindows.vbs'), ' ', soundPath, '.mp3']);
     const maccmd = R.join('', ['afplay ', soundPath, '.mp3']);
@@ -22,18 +23,20 @@ const daledale = function (){
     ], platform)
 
     function exec(cmd){
+
         return exect(cmd, function (error) {
-            R.ifElse(
+            console.log(fs.readFileSync(imagePath, 'utf8').toString())
+            R.ifElse( 
                R.empty,
-               () => console.log('VAMO DALE!'),
+               () => console.log('Pretty Cool!'),
                (error) => console.error(error),
                error)
         });
     }
 }
 
-module.exports = daledale;
+module.exports = prettycool;
 
 if (!module.parent) {
-    daledale();
+    prettycool();
 }

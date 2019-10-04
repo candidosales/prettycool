@@ -1,10 +1,6 @@
-# DaleDale Command Line Sound
+# Pretty Cool Command Line Sound
 
-<div style="text-align: center">
-    <img src="./daledale.jpg" height="300"/>
-</div>
-
-> Dale dale dale dale PQP! 
+> Pretty Cool! 
 
 ## Compatibility
 
@@ -15,18 +11,18 @@
 ## Installing
 Install globally:
 
-    npm install -g daledale
+    npm install -g prettycool
 
 ## Running
 Run command:
 
-    daledale
+    prettycool
 
 Or import in NodeJS script:
 
-    import daledale from 'daledale';
+    import prettycool from 'prettycool';
 
-    daledale();
+    prettycool();
 
 ## See also
 
